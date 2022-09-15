@@ -1,3 +1,5 @@
+import './Stats.css';
+
 /*
  * In the absence of truly stable unique ids for the catchphrases, just use an incrementing UID assigner that's shared
  * between all instances of this component. This effectively forces React to never re-use DOM nodes between renderings

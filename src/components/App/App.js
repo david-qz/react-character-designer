@@ -56,17 +56,19 @@ function App() {
     addCatchphrase
   } = useCharacterState();
 
-  return <>
-    <Controls
-      character={character}
-      setCharacterHead={setCharacterHead}
-      setCharacterTorso={setCharacterTorso}
-      setCharacterPants={setCharacterPants}
-      addCatchphrase={addCatchphrase}
-    />
-    <Character character={character} />
-    <Stats stats={stats} catchphrases={character.catchphrases} />
-  </>;
+  return (
+    <div className='App'>
+      <Controls
+        character={character}
+        setCharacterHead={setCharacterHead}
+        setCharacterTorso={setCharacterTorso}
+        setCharacterPants={setCharacterPants}
+        addCatchphrase={addCatchphrase}
+      />
+      <Character character={character} />
+      <Stats stats={stats} catchphrases={character.catchphrases} />
+    </div>
+  );
 }
 
 export default App;
