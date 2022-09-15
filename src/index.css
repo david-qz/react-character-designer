@@ -3,7 +3,8 @@
 }
 
 html {
-  background-color: blueviolet;
+  background-image: url("./images/background.jpg");
+  background-size: cover;
 }
 
 body {
