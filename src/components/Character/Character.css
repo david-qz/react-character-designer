@@ -6,5 +6,6 @@
 
 .Character img {
     height: 200px;
+    max-width: 330px;
     object-fit: contain;
 }
