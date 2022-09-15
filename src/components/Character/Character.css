@@ -1,0 +1,9 @@
+.Character {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.Character img {
+    height: 200px;
+    object-fit: contain;
+}

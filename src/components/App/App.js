@@ -1,23 +1,62 @@
 import './App.css';
-import LabeledSelect from '../LabeledSelect/LabeledSelect';
-import TextEntry from '../TextEntry/TextEntry';
 import { useState } from 'react';
+import Character from '../Character/Character';
+import Controls from '../Controls/Controls';
+
+function useCharacterState() {
+  const [character, setCharacter] = useState({
+    head: 'dog',
+    torso: 'blue',
+    pants: 'white'
+  });
+  const [stats, setStats] = useState({
+    headChanged: 0,
+    torsoChanged: 0,
+    pantsChanged: 0
+  });
+  const [catchphrases, setCatchphrases] = useState([]);
+
+  const setCharacterHead = (head) => {
+    setCharacter((prev) => ({ ...prev, head }));
+    setStats((prev) => ({ ...prev, headChanged: prev.headChanged + 1 }));
+  };
+  const setCharacterTorso = (torso) => {
+    setCharacter((prev) => ({ ...prev, torso }));
+    setStats((prev) => ({ ...prev, torsoChanged: prev.torsoChanged + 1 }));
+  };
+  const setCharacterPants = (pants) => {
+    setCharacter((prev) => ({ ...prev, pants }));
+    setStats((prev) => ({ ...prev, pantsChanged: prev.pantsChanged + 1 }));
+  };
+  const addCatchphrase = (catchphrase) => {
+    setCatchphrases((prev) => [...prev, catchphrase]);
+  };
+
+  return {
+    character: {
+      ...character,
+      catchphrases
+    },
+    stats,
+    setCharacterHead,
+    setCharacterTorso,
+    setCharacterPants,
+    addCatchphrase
+  };
+}
 
 function App() {
-  const [selectState, setSelectState] = useState('1');
-
-  function selectChanged(newValue) {
-    setSelectState(newValue);
-  }
-
-  function onSubmit(text) {
-    // eslint-disable-next-line no-console
-    console.log(text);
-  }
+  const {
+    character,
+    stats,
+    setCharacterHead,
+    setCharacterTorso,
+    setCharacterPants,
+    addCatchphrase
+  } = useCharacterState();
 
   return <>
-    <LabeledSelect label="blah" options={['1', '2', '3']} value={selectState} onChange={selectChanged} />
-    <TextEntry label="blah" onSubmit={onSubmit}/>
+    <Character character={character} />
   </>;
 }
 
