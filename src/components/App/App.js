@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Character from '../Character/Character';
 import Controls from '../Controls/Controls';
+import Stats from '../Stats/Stats';
 
 function useCharacterState() {
   const [character, setCharacter] = useState({
@@ -64,6 +65,7 @@ function App() {
       addCatchphrase={addCatchphrase}
     />
     <Character character={character} />
+    <Stats stats={stats} catchphrases={character.catchphrases} />
   </>;
 }
 
