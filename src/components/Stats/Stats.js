@@ -19,12 +19,20 @@ export default function Stats({
 }) {
   return (
     <div className='Stats'>
-      <p>{`You've changed this character's head ${headChanged} times.`}</p>
-      <p>{`You've changed this character's torso ${torsoChanged} times.`}</p>
-      <p>{`You've changed this character's pants ${pantsChanged} times.`}</p>
-      <p>{"You're character's catchphrases are:"}</p>
+      <h2>About your character:</h2>
+      <p>Their catchphrases are:</p>
       <ul>
-        {catchphrases.map((phrase) => <li key={getUID()}>{phrase}</li>)}
+        {
+          catchphrases.length > 0
+            ? catchphrases.map((phrase) => <li key={getUID()}><span className='catchphrase'>{phrase}</span></li>)
+            : <li style={{ color: '#777' }}>No catchphrases yet!</li>
+        }
+      </ul>
+      <h2>Stats:</h2>
+      <ul>
+        <li>{`You've changed your character's head ${headChanged} times.`}</li>
+        <li>{`You've changed your character's torso ${torsoChanged} times.`}</li>
+        <li>{`You've changed your character's pants ${pantsChanged} times.`}</li>
       </ul>
     </div>
   );

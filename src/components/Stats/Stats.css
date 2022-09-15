@@ -1,3 +1,20 @@
 .Stats {
     grid-area: c;
 }
+
+.Stats p {
+    margin: 10px 0;
+}
+
+.Stats ul {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.catchphrase {
+    font-weight: bold;
+}
+
+.catchphrase::before, .catchphrase::after {
+    content: "\"";
+}
