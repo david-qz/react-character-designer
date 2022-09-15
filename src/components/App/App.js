@@ -56,6 +56,13 @@ function App() {
   } = useCharacterState();
 
   return <>
+    <Controls
+      character={character}
+      setCharacterHead={setCharacterHead}
+      setCharacterTorso={setCharacterTorso}
+      setCharacterPants={setCharacterPants}
+      addCatchphrase={addCatchphrase}
+    />
     <Character character={character} />
   </>;
 }
