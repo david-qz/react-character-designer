@@ -4,6 +4,8 @@ import Character from '../Character/Character';
 import Controls from '../Controls/Controls';
 import Stats from '../Stats/Stats';
 
+import options from '../../options';
+
 function useCharacterState() {
   const [character, setCharacter] = useState({
     head: 'dog',
@@ -64,6 +66,7 @@ function App() {
         setCharacterTorso={setCharacterTorso}
         setCharacterPants={setCharacterPants}
         addCatchphrase={addCatchphrase}
+        options={options}
       />
       <Character character={character} />
       <Stats stats={stats} catchphrases={character.catchphrases} />

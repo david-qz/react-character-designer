@@ -2,24 +2,31 @@ import './Controls.css';
 import LabeledSelect from '../LabeledSelect/LabeledSelect';
 import TextEntry from '../TextEntry/TextEntry';
 
-export default function Controls({ character, setCharacterHead, setCharacterTorso, setCharacterPants, addCatchphrase }) {
+export default function Controls({
+  character,
+  setCharacterHead,
+  setCharacterTorso,
+  setCharacterPants,
+  addCatchphrase,
+  options
+}) {
   return (
     <div className='Controls'>
       <LabeledSelect
         label="Head"
-        options={['bird', 'dog', 'duck', 'horse']}
+        options={options.head}
         value={character.head}
         onChange={setCharacterHead}
       />
       <LabeledSelect
         label="Torso"
-        options={['blue', 'dress', 'pink', 'red']}
+        options={options.torso}
         value={character.torso}
         onChange={setCharacterTorso}
       />
       <LabeledSelect
         label="Pants"
-        options={['blue', 'dog', 'leg', 'white']}
+        options={options.pants}
         value={character.pants}
         onChange={setCharacterPants}
       />
