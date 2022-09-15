@@ -11,7 +11,7 @@ export default function TextEntry({ label, onSubmit }) {
     <form onSubmit={onFormSubmit}>
       <label>
         {label}
-        <input name='text'></input>
+        <input name='text' required />
       </label>
       <button>Submit</button>
     </form>
