@@ -1,0 +1,11 @@
+.Character {
+    grid-area: b;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.Character img {
+    height: 200px;
+    max-width: 330px;
+    object-fit: contain;
+}

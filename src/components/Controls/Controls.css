@@ -1,0 +1,39 @@
+.Controls {
+    grid-area: a;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+}
+
+.Controls label {
+    display: contents;
+}
+
+.Controls form {
+    display: contents;
+}
+
+.Controls select, .Controls input {
+    margin-top: 3px;
+    margin-bottom: 12px;
+    padding: 3px;
+}
+
+.Controls button {
+    align-self: end;
+    color: white;
+    background-color: hsl(224, 58%, 50%);
+    border: none;
+    border-radius: 15px;
+    padding: 8px 15px;
+}
+
+.Controls button:hover {
+    background-color: hsl(224, 58%, 40%);
+}
+
+.Controls button:active {
+    /* border-style: inset; */
+    background-color: hsl(224, 58%, 60%);
+}
